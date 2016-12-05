@@ -20,7 +20,7 @@ namespace TSPSimulatedAnnelaing
             this.ListBoxOfPoints.DataSource = this.ListPoints;
             this.Gamilton = false;
 
-            this.DoubleBuffered = true;
+            //this.DoubleBuffered = true;
         }
 
         public List<Point> ListPoints;
@@ -48,7 +48,7 @@ namespace TSPSimulatedAnnelaing
                 Point[] array = new Point[anneal.points.Length];
                 for (int i = 0; i < anneal.points.Length; i++)
                 {
-                    array[i] = anneal.points[anneal.GetArray()[i]];
+                    array[i] = anneal.points[anneal.GetArray()[i]].Copy();
                 }
                 Size PanelSize = this.VisualizationPanel.Size;
                 int width = PanelSize.Width;

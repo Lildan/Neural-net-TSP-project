@@ -37,5 +37,10 @@ namespace TSPSimulatedAnnelaing
         {
             return (this.X == p.X && this.Y == p.Y);
         }
+
+        public Point Copy()
+        {
+            return new Point(this.X, this.Y);
+        }
     }
 }
