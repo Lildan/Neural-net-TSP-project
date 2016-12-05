@@ -34,7 +34,7 @@ namespace TSPSimulatedAnnelaing
 
         }
 
-        
+
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -192,6 +192,35 @@ namespace TSPSimulatedAnnelaing
             this.Gamilton = this.GamiltonCheckBox.Checked;
         }
 
-
+        private void GenerateButton_Click(object sender, EventArgs e)
+        {
+            if (Int32.TryParse(this.RandomNumTextBox.Text, out int num) && num > 0)
+            {
+                Random rand = new Random();
+                for (int i = 0; i < num; i++)
+                {
+                    Point p = new Point(rand.Next(0, 721), rand.Next(0, 721));
+                    bool isin = false;
+                    foreach(Point point in this.ListPoints)
+                    {
+                        if (point.Equals(p))
+                        {
+                            isin = true;
+                            i--;
+                            break;
+                        }
+                    }
+                    if (!isin)
+                    {
+                        this.ListPoints.Add(p);
+                    }
+                }
+                UpdateListBox();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect number of points to generate.");
+            }
+        }
     }
 }

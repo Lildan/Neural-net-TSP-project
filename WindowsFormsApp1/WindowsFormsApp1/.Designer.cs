@@ -33,6 +33,7 @@ namespace TSPSimulatedAnnelaing
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Button ClearAll;
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.VisualizationPanel = new System.Windows.Forms.Panel();
             this.GamiltonCheckBox = new System.Windows.Forms.CheckBox();
             this.ListBoxOfPoints = new System.Windows.Forms.ListBox();
             this.InputTypeControl = new System.Windows.Forms.TabControl();
@@ -52,14 +53,18 @@ namespace TSPSimulatedAnnelaing
             this.CyclesNumberLabel = new System.Windows.Forms.Label();
             this.StopTemperatureMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.StartTemperatureMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.VisualizationPanel = new System.Windows.Forms.Panel();
             this.ParametersInfoToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.RandomNumLabel = new System.Windows.Forms.Label();
+            this.RandomNumTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.pointsLabel = new System.Windows.Forms.Label();
+            this.GenerateButton = new System.Windows.Forms.Button();
             ClearAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.InputTypeControl.SuspendLayout();
             this.ManualInput.SuspendLayout();
+            this.RandomInput.SuspendLayout();
             this.SuspendLayout();
             // 
             // ClearAll
@@ -100,6 +105,15 @@ namespace TSPSimulatedAnnelaing
             this.splitContainer1.Size = new System.Drawing.Size(1274, 777);
             this.splitContainer1.SplitterDistance = 1226;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // VisualizationPanel
+            // 
+            this.VisualizationPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.VisualizationPanel.Location = new System.Drawing.Point(479, 26);
+            this.VisualizationPanel.Name = "VisualizationPanel";
+            this.VisualizationPanel.Size = new System.Drawing.Size(720, 720);
+            this.VisualizationPanel.TabIndex = 0;
+            this.VisualizationPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.VisualizationPanel_Paint);
             // 
             // GamiltonCheckBox
             // 
@@ -216,6 +230,10 @@ namespace TSPSimulatedAnnelaing
             // 
             // RandomInput
             // 
+            this.RandomInput.Controls.Add(this.GenerateButton);
+            this.RandomInput.Controls.Add(this.pointsLabel);
+            this.RandomInput.Controls.Add(this.RandomNumTextBox);
+            this.RandomInput.Controls.Add(this.RandomNumLabel);
             this.RandomInput.Location = new System.Drawing.Point(8, 39);
             this.RandomInput.Name = "RandomInput";
             this.RandomInput.Padding = new System.Windows.Forms.Padding(3);
@@ -289,15 +307,6 @@ namespace TSPSimulatedAnnelaing
             this.StartTemperatureMaskedTextBox.TabIndex = 6;
             this.ParametersInfoToolTip.SetToolTip(this.StartTemperatureMaskedTextBox, "The start temperature of anneal process.");
             // 
-            // VisualizationPanel
-            // 
-            this.VisualizationPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.VisualizationPanel.Location = new System.Drawing.Point(479, 26);
-            this.VisualizationPanel.Name = "VisualizationPanel";
-            this.VisualizationPanel.Size = new System.Drawing.Size(720, 720);
-            this.VisualizationPanel.TabIndex = 0;
-            this.VisualizationPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.VisualizationPanel_Paint);
-            // 
             // ParametersInfoToolTip
             // 
             this.ParametersInfoToolTip.AutoPopDelay = 5000;
@@ -305,6 +314,42 @@ namespace TSPSimulatedAnnelaing
             this.ParametersInfoToolTip.ReshowDelay = 100;
             this.ParametersInfoToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ParametersInfoToolTip.ToolTipTitle = "Parameter tip";
+            // 
+            // RandomNumLabel
+            // 
+            this.RandomNumLabel.AutoSize = true;
+            this.RandomNumLabel.Location = new System.Drawing.Point(6, 23);
+            this.RandomNumLabel.Name = "RandomNumLabel";
+            this.RandomNumLabel.Size = new System.Drawing.Size(101, 25);
+            this.RandomNumLabel.TabIndex = 0;
+            this.RandomNumLabel.Text = "Generate";
+            // 
+            // RandomNumTextBox
+            // 
+            this.RandomNumTextBox.Location = new System.Drawing.Point(113, 20);
+            this.RandomNumTextBox.Name = "RandomNumTextBox";
+            this.RandomNumTextBox.Size = new System.Drawing.Size(100, 31);
+            this.RandomNumTextBox.TabIndex = 1;
+            this.RandomNumTextBox.Text = "50";
+            // 
+            // pointsLabel
+            // 
+            this.pointsLabel.AutoSize = true;
+            this.pointsLabel.Location = new System.Drawing.Point(219, 23);
+            this.pointsLabel.Name = "pointsLabel";
+            this.pointsLabel.Size = new System.Drawing.Size(70, 25);
+            this.pointsLabel.TabIndex = 2;
+            this.pointsLabel.Text = "points";
+            // 
+            // GenerateButton
+            // 
+            this.GenerateButton.Location = new System.Drawing.Point(113, 82);
+            this.GenerateButton.Name = "GenerateButton";
+            this.GenerateButton.Size = new System.Drawing.Size(125, 44);
+            this.GenerateButton.TabIndex = 3;
+            this.GenerateButton.Text = "Generate";
+            this.GenerateButton.UseVisualStyleBackColor = true;
+            this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
             // 
             // MainForm
             // 
@@ -321,6 +366,8 @@ namespace TSPSimulatedAnnelaing
             this.InputTypeControl.ResumeLayout(false);
             this.ManualInput.ResumeLayout(false);
             this.ManualInput.PerformLayout();
+            this.RandomInput.ResumeLayout(false);
+            this.RandomInput.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -349,6 +396,10 @@ namespace TSPSimulatedAnnelaing
         private System.Windows.Forms.TabPage FileInput;
         private System.Windows.Forms.TabPage RandomInput;
         private System.Windows.Forms.Panel VisualizationPanel;
+        private System.Windows.Forms.Button GenerateButton;
+        private System.Windows.Forms.Label pointsLabel;
+        private System.Windows.Forms.MaskedTextBox RandomNumTextBox;
+        private System.Windows.Forms.Label RandomNumLabel;
     }
 }
 
