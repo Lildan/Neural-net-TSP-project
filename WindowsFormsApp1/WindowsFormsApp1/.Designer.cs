@@ -268,6 +268,7 @@ namespace TSPSimulatedAnnelaing
             this.CyclesNumberMaskedTextBox.Name = "CyclesNumberMaskedTextBox";
             this.CyclesNumberMaskedTextBox.Size = new System.Drawing.Size(100, 31);
             this.CyclesNumberMaskedTextBox.TabIndex = 10;
+            this.CyclesNumberMaskedTextBox.Text = "300";
             this.ParametersInfoToolTip.SetToolTip(this.CyclesNumberMaskedTextBox, "Number of randomize cycles in one temperature reduction iteration.");
             // 
             // StartTemperatureLabel
@@ -297,6 +298,7 @@ namespace TSPSimulatedAnnelaing
             this.StopTemperatureMaskedTextBox.Name = "StopTemperatureMaskedTextBox";
             this.StopTemperatureMaskedTextBox.Size = new System.Drawing.Size(100, 31);
             this.StopTemperatureMaskedTextBox.TabIndex = 8;
+            this.StopTemperatureMaskedTextBox.Text = "999";
             this.ParametersInfoToolTip.SetToolTip(this.StopTemperatureMaskedTextBox, "The stop temperature of anneal process.");
             // 
             // StartTemperatureMaskedTextBox
@@ -305,6 +307,7 @@ namespace TSPSimulatedAnnelaing
             this.StartTemperatureMaskedTextBox.Name = "StartTemperatureMaskedTextBox";
             this.StartTemperatureMaskedTextBox.Size = new System.Drawing.Size(100, 31);
             this.StartTemperatureMaskedTextBox.TabIndex = 6;
+            this.StartTemperatureMaskedTextBox.Text = "1000";
             this.ParametersInfoToolTip.SetToolTip(this.StartTemperatureMaskedTextBox, "The start temperature of anneal process.");
             // 
             // ParametersInfoToolTip
