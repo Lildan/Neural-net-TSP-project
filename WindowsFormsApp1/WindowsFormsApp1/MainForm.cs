@@ -29,10 +29,7 @@ namespace TSPSimulatedAnnelaing
 
         public TSPSimulatedAnnealing anneal;
 
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -60,7 +57,7 @@ namespace TSPSimulatedAnnelaing
                 double maxW = array.Max(element => element.X);
 
                 SolidBrush pointBrush = new SolidBrush(Color.Red);
-                Pen linePen = new Pen(Color.Green);
+                Pen linePen = new Pen(Color.DarkOrange);
                 Graphics g = this.VisualizationPanel.CreateGraphics();
 
                 for (int i = 0; i < array.Length; i++)
@@ -83,12 +80,6 @@ namespace TSPSimulatedAnnelaing
 
             }
         }
-
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
 
 
         private void AddManualButton_Click(object sender, EventArgs e)
@@ -148,7 +139,7 @@ namespace TSPSimulatedAnnelaing
             StartCalculationThread();
         }
 
-        //#TODO
+        
         private bool ValidateParameters()
         {
             if(this.ListPoints.Count<=2)

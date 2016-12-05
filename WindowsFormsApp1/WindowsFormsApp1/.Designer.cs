@@ -46,6 +46,10 @@ namespace TSPSimulatedAnnelaing
             this.EnterCoordinates = new System.Windows.Forms.Label();
             this.FileInput = new System.Windows.Forms.TabPage();
             this.RandomInput = new System.Windows.Forms.TabPage();
+            this.GenerateButton = new System.Windows.Forms.Button();
+            this.pointsLabel = new System.Windows.Forms.Label();
+            this.RandomNumTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.RandomNumLabel = new System.Windows.Forms.Label();
             this.Calculate = new System.Windows.Forms.Button();
             this.StopTemperetureLabel = new System.Windows.Forms.Label();
             this.CyclesNumberMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -54,10 +58,6 @@ namespace TSPSimulatedAnnelaing
             this.StopTemperatureMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.StartTemperatureMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.ParametersInfoToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.RandomNumLabel = new System.Windows.Forms.Label();
-            this.RandomNumTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.pointsLabel = new System.Windows.Forms.Label();
-            this.GenerateButton = new System.Windows.Forms.Button();
             ClearAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -242,9 +242,45 @@ namespace TSPSimulatedAnnelaing
             this.RandomInput.Text = "Random";
             this.RandomInput.UseVisualStyleBackColor = true;
             // 
+            // GenerateButton
+            // 
+            this.GenerateButton.Location = new System.Drawing.Point(113, 82);
+            this.GenerateButton.Name = "GenerateButton";
+            this.GenerateButton.Size = new System.Drawing.Size(125, 44);
+            this.GenerateButton.TabIndex = 3;
+            this.GenerateButton.Text = "Generate";
+            this.GenerateButton.UseVisualStyleBackColor = true;
+            this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
+            // 
+            // pointsLabel
+            // 
+            this.pointsLabel.AutoSize = true;
+            this.pointsLabel.Location = new System.Drawing.Point(219, 23);
+            this.pointsLabel.Name = "pointsLabel";
+            this.pointsLabel.Size = new System.Drawing.Size(70, 25);
+            this.pointsLabel.TabIndex = 2;
+            this.pointsLabel.Text = "points";
+            // 
+            // RandomNumTextBox
+            // 
+            this.RandomNumTextBox.Location = new System.Drawing.Point(113, 20);
+            this.RandomNumTextBox.Name = "RandomNumTextBox";
+            this.RandomNumTextBox.Size = new System.Drawing.Size(100, 31);
+            this.RandomNumTextBox.TabIndex = 1;
+            this.RandomNumTextBox.Text = "50";
+            // 
+            // RandomNumLabel
+            // 
+            this.RandomNumLabel.AutoSize = true;
+            this.RandomNumLabel.Location = new System.Drawing.Point(6, 23);
+            this.RandomNumLabel.Name = "RandomNumLabel";
+            this.RandomNumLabel.Size = new System.Drawing.Size(101, 25);
+            this.RandomNumLabel.TabIndex = 0;
+            this.RandomNumLabel.Text = "Generate";
+            // 
             // Calculate
             // 
-            this.Calculate.Location = new System.Drawing.Point(305, 314);
+            this.Calculate.Location = new System.Drawing.Point(305, 220);
             this.Calculate.Name = "Calculate";
             this.Calculate.Size = new System.Drawing.Size(125, 44);
             this.Calculate.TabIndex = 1;
@@ -318,48 +354,13 @@ namespace TSPSimulatedAnnelaing
             this.ParametersInfoToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ParametersInfoToolTip.ToolTipTitle = "Parameter tip";
             // 
-            // RandomNumLabel
-            // 
-            this.RandomNumLabel.AutoSize = true;
-            this.RandomNumLabel.Location = new System.Drawing.Point(6, 23);
-            this.RandomNumLabel.Name = "RandomNumLabel";
-            this.RandomNumLabel.Size = new System.Drawing.Size(101, 25);
-            this.RandomNumLabel.TabIndex = 0;
-            this.RandomNumLabel.Text = "Generate";
-            // 
-            // RandomNumTextBox
-            // 
-            this.RandomNumTextBox.Location = new System.Drawing.Point(113, 20);
-            this.RandomNumTextBox.Name = "RandomNumTextBox";
-            this.RandomNumTextBox.Size = new System.Drawing.Size(100, 31);
-            this.RandomNumTextBox.TabIndex = 1;
-            this.RandomNumTextBox.Text = "50";
-            // 
-            // pointsLabel
-            // 
-            this.pointsLabel.AutoSize = true;
-            this.pointsLabel.Location = new System.Drawing.Point(219, 23);
-            this.pointsLabel.Name = "pointsLabel";
-            this.pointsLabel.Size = new System.Drawing.Size(70, 25);
-            this.pointsLabel.TabIndex = 2;
-            this.pointsLabel.Text = "points";
-            // 
-            // GenerateButton
-            // 
-            this.GenerateButton.Location = new System.Drawing.Point(113, 82);
-            this.GenerateButton.Name = "GenerateButton";
-            this.GenerateButton.Size = new System.Drawing.Size(125, 44);
-            this.GenerateButton.TabIndex = 3;
-            this.GenerateButton.Text = "Generate";
-            this.GenerateButton.UseVisualStyleBackColor = true;
-            this.GenerateButton.Click += new System.EventHandler(this.GenerateButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1274, 777);
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.Text = "Travelling Salesman Simulated Anneal method";
             this.splitContainer1.Panel1.ResumeLayout(false);
