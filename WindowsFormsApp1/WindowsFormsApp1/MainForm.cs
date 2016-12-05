@@ -151,6 +151,45 @@ namespace TSPSimulatedAnnelaing
         //#TODO
         private bool ValidateParameters()
         {
+            if(this.ListPoints.Count<=2)
+            {
+                MessageBox.Show("No points entered to calculate route.");
+                return false;
+            }
+            if(Double.TryParse(this.StartTemperatureMaskedTextBox.Text,out double starttemp))
+            {
+                if(Double.TryParse(this.StopTemperatureMaskedTextBox.Text, out double stoptemp))
+                {
+                    
+                    if (stoptemp < starttemp)
+                    {
+                        if(Int32.TryParse(this.CyclesNumberMaskedTextBox.Text, out int cycles))
+                        {
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Number of cycles must me integer value greater than zero.");
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Start temperature must be greater then stop temperature.");
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter correct stop temperature.");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter correct start temperature.");
+                return false;
+            }
             return true;
         }
 
