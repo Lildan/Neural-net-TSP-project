@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.25928.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSP Simulated Anneal method", "WindowsFormsApp1\TSP Simulated Anneal method.csproj", "{E99972B1-7B51-4904-BDA1-40DF8A5BEB75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TSP Simulated Anneal method", "TSP Simulated Anneal method\TSP Simulated Anneal method.csproj", "{E99972B1-7B51-4904-BDA1-40DF8A5BEB75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

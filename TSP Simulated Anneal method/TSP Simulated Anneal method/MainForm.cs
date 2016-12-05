@@ -29,10 +29,7 @@ namespace TSPSimulatedAnnelaing
 
         public TSPSimulatedAnnealing anneal;
 
-        private void splitContainer2_Panel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
@@ -60,7 +57,7 @@ namespace TSPSimulatedAnnelaing
                 double maxW = array.Max(element => element.X);
 
                 SolidBrush pointBrush = new SolidBrush(Color.Red);
-                Pen linePen = new Pen(Color.Green);
+                Pen linePen = new Pen(Color.DarkOrange);
                 Graphics g = this.VisualizationPanel.CreateGraphics();
 
                 for (int i = 0; i < array.Length; i++)
@@ -83,12 +80,6 @@ namespace TSPSimulatedAnnelaing
 
             }
         }
-
-        private void splitContainer2_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
 
 
         private void AddManualButton_Click(object sender, EventArgs e)
@@ -148,9 +139,48 @@ namespace TSPSimulatedAnnelaing
             StartCalculationThread();
         }
 
-        //#TODO
+        
         private bool ValidateParameters()
         {
+            if(this.ListPoints.Count<=2)
+            {
+                MessageBox.Show("No points entered to calculate route.");
+                return false;
+            }
+            if(Double.TryParse(this.StartTemperatureMaskedTextBox.Text,out double starttemp))
+            {
+                if(Double.TryParse(this.StopTemperatureMaskedTextBox.Text, out double stoptemp))
+                {
+                    
+                    if (stoptemp < starttemp)
+                    {
+                        if(Int32.TryParse(this.CyclesNumberMaskedTextBox.Text, out int cycles))
+                        {
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Number of cycles must me integer value greater than zero.");
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Start temperature must be greater then stop temperature.");
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter correct stop temperature.");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter correct start temperature.");
+                return false;
+            }
             return true;
         }
 
@@ -185,6 +215,7 @@ namespace TSPSimulatedAnnelaing
                 }
             }
             this.VisualizationPanel.Invalidate();
+            
         }
 
         private void GamiltonCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -222,5 +253,6 @@ namespace TSPSimulatedAnnelaing
                 MessageBox.Show("Incorrect number of points to generate.");
             }
         }
+
     }
 }

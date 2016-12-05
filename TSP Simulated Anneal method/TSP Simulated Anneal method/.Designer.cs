@@ -1,6 +1,4 @@
-﻿using TSPSimulatedAnnelaing.Recources.Language;
-
-namespace TSPSimulatedAnnelaing
+﻿namespace TSPSimulatedAnnelaing
 {
     partial class MainForm
     {
@@ -58,6 +56,7 @@ namespace TSPSimulatedAnnelaing
             this.StopTemperatureMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.StartTemperatureMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.ParametersInfoToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.PathLengthLabel = new System.Windows.Forms.Label();
             ClearAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -86,6 +85,7 @@ namespace TSPSimulatedAnnelaing
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.PathLengthLabel);
             this.splitContainer1.Panel1.Controls.Add(this.VisualizationPanel);
             this.splitContainer1.Panel1.Controls.Add(ClearAll);
             this.splitContainer1.Panel1.Controls.Add(this.GamiltonCheckBox);
@@ -354,6 +354,15 @@ namespace TSPSimulatedAnnelaing
             this.ParametersInfoToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.ParametersInfoToolTip.ToolTipTitle = "Parameter tip";
             // 
+            // PathLengthLabel
+            // 
+            this.PathLengthLabel.AutoSize = true;
+            this.PathLengthLabel.Location = new System.Drawing.Point(152, 333);
+            this.PathLengthLabel.Name = "PathLengthLabel";
+            this.PathLengthLabel.Size = new System.Drawing.Size(220, 25);
+            this.PathLengthLabel.TabIndex = 12;
+            this.PathLengthLabel.Text = "Current path length: 0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -404,6 +413,7 @@ namespace TSPSimulatedAnnelaing
         private System.Windows.Forms.Label pointsLabel;
         private System.Windows.Forms.MaskedTextBox RandomNumTextBox;
         private System.Windows.Forms.Label RandomNumLabel;
+        private System.Windows.Forms.Label PathLengthLabel;
     }
 }
 
